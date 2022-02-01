@@ -43,7 +43,11 @@
 </template>
 
 <style lang="scss">
-  body {
+  main {
+    text-align: center;
+  }
+
+  footer {
     text-align: center;
   }
 
