@@ -1,5 +1,6 @@
 <script>
   export default {
+    emits: ['updated'],
     props: {
       label: {
         type: String,
