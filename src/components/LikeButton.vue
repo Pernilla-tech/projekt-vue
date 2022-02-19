@@ -1,5 +1,5 @@
 <template>
-  <button @click="$store.commit('increment')" class="btn btn-primary">
+  <button @click="$store.commit('increment', 2)" class="btn btn-primary">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -18,6 +18,10 @@
     <p>{{ $store.state.counter }} likes</p>
   </span>
 </template>
+
+<!-- <script>
+  import { Store } from '@/store'
+</script> -->
 
 <style lang="scss" scoped>
   button {
