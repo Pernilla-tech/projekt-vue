@@ -45,16 +45,17 @@
 
 <template>
   <div id="wrapper">
-    <h1>Sök drink</h1>
+    <div class="input_wrapper">
+      <h1>Sök drink</h1>
+      <input v-model="drink_name" type="search" />
 
-    <input v-model="drink_name" type="search" />
-
-    <input
-      type="button"
-      class="btn btn-primary"
-      @click="onClick"
-      value="Sök drink"
-    />
+      <input
+        type="button"
+        class="btn btn-primary"
+        @click="onClick"
+        value="Sök drink"
+      />
+    </div>
 
     <div v-if="drink != null">
       <DrinkItem
@@ -64,27 +65,59 @@
       />
     </div>
 
-    <input
-      type="text"
-      placeholder="Lista för mina favoritdrinkar"
-      v-model="item"
-    />
+    <div class="input_wrapper_two">
+      <input
+        type="text"
+        placeholder="Lista för mina favoritdrinkar"
+        v-model="item"
+      />
 
-    <button class="btn btn-primary" @click.prevent="addItem">Lägg till</button>
+      <button class="btn btn-primary" @click.prevent="addItem">
+        Lägg till
+      </button>
+    </div>
 
     <MyFavorites :items="items" @remove-item="removeItem" />
   </div>
 </template>
 
 <style lang="scss" scoped>
+  #wrapper {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .input_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+  }
+
+  .input_wrapper_two {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+  }
+
+  .btn {
+    width: 50%;
+    margin-top: 7%;
+    margin-bottom: 7%;
+  }
+
   h1 {
     margin: 70px;
   }
+
   ul {
     list-style: none;
     margin: 20px;
-  }
-  input {
-    margin-right: 20px;
   }
 </style>

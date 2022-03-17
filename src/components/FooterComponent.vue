@@ -18,6 +18,9 @@
   footer {
     background-color: white;
     opacity: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     p {
       padding-bottom: 0;

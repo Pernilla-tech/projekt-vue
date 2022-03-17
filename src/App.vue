@@ -33,13 +33,11 @@
     </nav>
   </header>
 
-  <main class="container">
+  <main>
     <RouterView />
   </main>
 
-  <footer>
-    <FooterComponent />
-  </footer>
+  <FooterComponent />
 </template>
 
 <style lang="scss">
@@ -49,14 +47,18 @@
 
   footer {
     text-align: center;
+    display: flex;
   }
 
   form {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding: 10px;
     margin: 20px;
     margin-bottom: 0;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
 
     input {
